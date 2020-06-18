@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.s1">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA">
+
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <application
+
+        android:allowBackup="true"
+        android:icon="@mipmap/sih"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/sih"
+        android:usesCleartextTraffic="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".five"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".third"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".fourth"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".second"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".six"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".seven"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".eight"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".nine"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".ten"
+            android:label="@string/app_name"></activity>
+        <activity android:name=".Register" />
+        <activity android:name=".Status" />
+        <activity android:name=".home" />
+        <activity android:name=".Help" />
+        <activity android:name=".FAQS" />
+
+
+    </application>
+
+</manifest>

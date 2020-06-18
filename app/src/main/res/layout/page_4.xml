@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/page_4_image"
+            android:layout_width="170dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/stet_logo">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/page_4_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Sikkim Teacher Eligibility Test-2020"
+            android:textSize="30sp"
+            android:layout_marginBottom="20dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+
+        <LinearLayout
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background"
+            android:layout_marginLeft="0dp">
+
+            <ProgressBar
+                android:id="@+id/page_4_progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="310dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/page_4_personal_info"
+                android:layout_marginTop="5dp"
+                android:text="Personal Info"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/page_4_candi_name"
+                    android:text="Candidate's Name:"
+                    android:textStyle="bold"
+                    android:textSize="17dp"
+
+                    />
+
+                <TextView
+                    android:id="@+id/page_4_fname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_fname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:background="@drawable/box"
+                    android:hint="Your First Name"
+                    android:inputType="text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_mname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Middle Name"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_mname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="Your Middle Name"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_lname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="Your Last Name"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select your gender:"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="17dp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/page_4_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Male"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/page_4_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Female"
+                        android:textSize="14sp" />
+
+                    <RadioButton
+                        android:id="@+id/page_4_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Other"
+                        android:textSize="14sp" />
+                </RadioGroup>
+                <TextView
+                    android:id="@+id/page_4_f_h"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:text="Father/Husband:"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/page_4_father"
+                        android:text="Father"
+                        android:textSize="14dp" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/page_4_husband"
+                        android:textSize="14sp"
+                        android:text="Husband" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/page_4_father_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Candidate Father's/Husband's Name:"
+                    android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/page_4_father_fname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_father_fname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="First Name"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_father_mname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Middle Name"
+                    android:textSize="14dp"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_father_mname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="Middle Name"
+                    android:inputType="text"
+                    android:paddingLeft="5dp"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/page_4_father_lname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_father_lname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="Last Name"
+                    android:inputType="text"
+                    android:paddingStart="5dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_mother_name"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Candidate's Mother's Name:" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:id="@+id/page_4_mother_fname"
+                    android:text="First Name"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_mother_fname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:paddingLeft="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="First Name"
+                    android:inputType="text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:text="Middle Name"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_mother_mname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="Middle Name"
+                    android:paddingLeft="5dp"
+                    android:inputType="text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12dp"
+                    android:id="@+id/page_4_mother_lname"
+                    android:text="Last Name"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_mother_lname"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:background="@drawable/box"
+                    android:hint="Last Name"
+                    android:inputType="text"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/page_4_dob"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"
+                    android:text="Date Of Birth :" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/page_4_enter_dob"
+                        android:layout_width="160dp"
+                        android:layout_height="35dp"
+                        android:layout_marginRight="30dp"
+                        android:background="@drawable/box"
+                        android:hint="dd/mm/yyyy"
+                        android:paddingLeft="5dp"
+                        android:inputType="date"
+                        android:textSize="12sp" />
+
+                    <ImageButton
+                        android:id="@+id/page_4_calender"
+                        android:layout_width="49dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_date_range_black_24dp"
+                        android:background="@android:color/white" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/page_4_comminity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Community :"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="3dp"
+                    android:textSize="17dp" />
+
+                <Spinner
+                    android:id="@+id/page_4_spin_community"
+                    android:layout_width="234dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="35dp"
+                    android:entries="@array/community" />
+
+                <TextView
+                    android:id="@+id/page_4_aadhar_no"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:layout_height="wrap_content"
+                    android:text="Aadhar Number:"
+                    android:textSize="17dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_aadhar_no"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/box"
+                    android:hint="Aadhar Number"
+                    android:paddingLeft="5dp"
+                    android:inputType="number"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_postal_address_1"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    android:textSize="25dp"
+                    android:text="Postal Address" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address 1 :"
+                    android:id="@+id/page_4_address1"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_postal_address_1"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/box"
+                    android:hint="Address"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="0dp"
+                    android:inputType="textImeMultiLine"
+                    android:textSize="12sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/page_4_district_1"
+                    android:text="District 1"
+                    android:layout_marginBottom="3dp"
+
+                    />
+
+                <EditText
+                    android:id="@+id/page_4_enter_postal_address_district_1"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="9dp"
+                    android:layout_marginLeft="0dp"
+                    android:background="@drawable/box"
+                    android:hint="District"
+                    android:paddingLeft="5dp"
+                    android:inputType="text"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_postal_zip_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Postal Zip 1:"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_postal_zip_1"
+                    android:layout_width="70dp"
+                    android:inputType="numberSigned"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/box"
+                    android:layout_marginBottom="9dp">
+
+                </EditText>
+                <TextView
+                    android:id="@+id/page_4_state_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State 1"
+                    android:layout_marginBottom="3dp"
+
+                    />
+
+                <Spinner
+                    android:id="@+id/page_4_spin_states_1"
+                    android:layout_width="170dp"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="9dp"
+                    android:entries="@array/states">
+
+                </Spinner>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address 2 :"
+                    android:id="@+id/page_4_address2"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_postal_address_2"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/box"
+                    android:hint="Address"
+                    android:paddingLeft="5dp"
+                    android:layout_marginLeft="0dp"
+                    android:inputType="textImeMultiLine"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/page_4_district_2"
+                    android:text="District 2"
+                    android:layout_marginBottom="3dp"
+
+                    />
+
+                <EditText
+                    android:id="@+id/page_4_enter_postal_address_district_2"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="9dp"
+                    android:layout_marginLeft="0dp"
+                    android:background="@drawable/box"
+                    android:hint="District"
+                    android:paddingLeft="5dp"
+                    android:inputType="text"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/page_4_postal_zip_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Postal Zip 2:"
+                    android:layout_marginBottom="3dp" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_postal_zip_2"
+                    android:layout_width="70dp"
+                    android:inputType="numberSigned"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/box"
+                    android:layout_marginBottom="9dp">
+
+                </EditText>
+
+                <TextView
+                    android:id="@+id/page_4_state_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State 2"
+                    android:layout_marginBottom="3dp"
+
+                    />
+
+                <Spinner
+                    android:id="@+id/page_4_spin_states_2"
+                    android:layout_width="170dp"
+                    android:layout_height="25dp"
+                    android:layout_marginBottom="9dp"
+                    android:entries="@array/states">
+
+                </Spinner>
+
+                <TextView
+                    android:id="@+id/page_4_phn_no_1"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Phone Number 1:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+91 - " />
+
+                    <TextView
+                        android:id="@+id/page_4_enter_phn_no_1"
+                        android:layout_width="202dp"
+                        android:layout_height="35dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@drawable/box"
+                        android:hint="Phone Number"
+                        android:paddingLeft="5dp"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/page_4_phn_no_2"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Phone Number 2:" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="9dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+91 - " />
+
+                    <EditText
+                        android:id="@+id/page_4_enter_phn_no_2"
+                        android:layout_width="202dp"
+                        android:layout_height="35dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@drawable/box"
+                        android:hint="Phone Number"
+                        android:paddingLeft="5dp"
+                        android:inputType="phone"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/page_4_email_1"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Email Address 1:" />
+
+                <TextView
+                    android:id="@+id/page_4_enter_email_1"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="05dp"
+                    android:background="@drawable/box"
+                    android:hint="abc@gmail.com"
+                    android:paddingLeft="5dp"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/page_4_email_2"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Email Address 2:" />
+
+                <EditText
+                    android:id="@+id/page_4_enter_email_2"
+                    android:layout_width="234dp"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/box"
+                    android:hint="abc@gmail.com"
+                    android:paddingLeft="5dp"
+                    android:inputType="textEmailAddress"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/page_4_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="9dp"
+                    android:text="I have downloaded Information Bulletin, read and understood all the instructions." />
+
+
+                <LinearLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/page_4_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="0dp"
+                        android:background="@drawable/button_shape"
+                        android:text="BACK" />
+
+                    <Button
+                        android:id="@+id/page_4_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="110dp"
+                        android:background="@drawable/button_shape"
+                        android:text="NEXT"
+
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
