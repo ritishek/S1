@@ -75,34 +75,6 @@ class second : AppCompatActivity() {
                 progress.isIndeterminate = true
                 progress.setMessage("Registering :) ")
                 progress.show()
-                /*Stitch.initializeDefaultAppClient(
-                    resources.getString(R.string.my_app_id)
-                )
-
-                val stitchAppClient = Stitch.getDefaultAppClient()
-                stitchAppClient.auth.loginWithCredential(AnonymousCredential())
-                    .addOnSuccessListener {
-
-                    }
-                val mongoClient = stitchAppClient.getServiceClient(
-                    RemoteMongoClient.factory,
-                    "mongodb-atlas"
-                )
-
-                val myCollection = mongoClient.getDatabase("test") //create collection by giving
-                    .getCollection("table")
-                var myFirst= Document()
-                myFirst["Name"]=name
-                myFirst["Phone"]=phone
-                myFirst["Email"]=email
-                myFirst["Aadhar"]=aadhar
-                myCollection.insertOne(myFirst)
-                    .addOnSuccessListener {
-                        Log.d("Verify","Success")
-                    }
-                    .addOnFailureListener {
-                        Log.d("Verify","Failed")
-                    }*/
 
                 val map: HashMap<String, String> = HashMap()
 
@@ -117,7 +89,7 @@ class second : AppCompatActivity() {
                         call: Call<Void?>?,
                         response: Response<Void?>
                     ) {
-                        if (response.code() === 200) {
+                        if (response.code() == 200) {
                             Toast.makeText(
                                 this@second,
                                 "Signed up successfully", Toast.LENGTH_LONG
@@ -128,7 +100,7 @@ class second : AppCompatActivity() {
 
 
                             startActivity(i)
-                        } else if (response.code() === 400) {
+                        } else if (response.code() == 400) {
                             Toast.makeText(
                                 this@second,
                                 "Already registered", Toast.LENGTH_LONG
@@ -142,7 +114,7 @@ class second : AppCompatActivity() {
                         t: Throwable
                     ) {
                         Toast.makeText(
-                            this@second, t.message,
+                            this@second, "Poor Internet Try again",
                             Toast.LENGTH_LONG
                         ).show()
                         progress.dismiss()
@@ -157,12 +129,17 @@ class second : AppCompatActivity() {
             startActivity(i)
         }
 
+        page_2_aadhar_verify.setOnClickListener {
+            val URL: String = ""
+            verifyAadhar(aadhar, URL)
+        }
+
+
         page_2_send_phn_otp.setOnClickListener {
 
             //progress.setMessage("Sending OTP :) ")
             //progress.show()
             sendVerificationCode(phone)
-
 
 
         }
@@ -173,37 +150,39 @@ class second : AppCompatActivity() {
 
         }
 
+
+
         page_2_send_email_link.setOnClickListener {
 
 
             emailVal(email, pass)
-                page_2_email_verify.setOnClickListener {
-                    // progress5.show()
-                    val user = auth2.currentUser
-                    if (user != null) {
-                        if (user.isEmailVerified) {
-                            Toast.makeText(this, "Email Verified", Toast.LENGTH_LONG).show()
-                            Log.d("TAG", "Verify:success")
-                            page_2_email_check.text = "Email Verified"
-                            page_2_email_verify.text = "Verified"
-                            page_2_send_email_link.visibility = View.INVISIBLE
-                            //  progress5.dismiss()
-                            E = 1
+            page_2_email_verify.setOnClickListener {
+                // progress5.show()
+                val user = auth2.currentUser
+                if (user != null) {
+                    if (user.isEmailVerified) {
+                        Toast.makeText(this, "Email Verified", Toast.LENGTH_LONG).show()
+                        Log.d("TAG", "Verify:success")
+                        page_2_email_check.text = "Email Verified"
+                        page_2_email_verify.text = "Verified"
+                        page_2_send_email_link.visibility = View.INVISIBLE
+                        //  progress5.dismiss()
+                        E = 1
 
-                        } else {
-                            Toast.makeText(this, "Email Not Verified", Toast.LENGTH_LONG)
-                                .show()
-                            Log.d("TAG", "Verify:failed")
-                            //progress5.dismiss()
-                        }
                     } else {
-                        Toast.makeText(this, "Empty User", Toast.LENGTH_LONG)
+                        Toast.makeText(this, "Email Not Verified", Toast.LENGTH_LONG)
                             .show()
-                        Log.d("TAG", "Empty user")
+                        Log.d("TAG", "Verify:failed")
                         //progress5.dismiss()
-
-
                     }
+                } else {
+                    Toast.makeText(this, "Empty User", Toast.LENGTH_LONG)
+                        .show()
+                    Log.d("TAG", "Empty user")
+                    //progress5.dismiss()
+
+
+                }
             }
         }
 
@@ -297,6 +276,7 @@ class second : AppCompatActivity() {
                 }
         }
     }
+
 
     /* private fun emailValidate() {
 
@@ -493,5 +473,126 @@ class second : AppCompatActivity() {
         return x
     }
 
+    private fun verifyAadhar(aadhar: String, URL: String) {
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl(URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        var retrofitInterface2: Retro2? = retrofit.create(Retro2::class.java)
+        val map: HashMap<String, String> = HashMap()
+        map["username"] = aadhar
+        val call: Call<Void?>? = retrofitInterface2?.checkAadhar(map)
+        call!!.enqueue(object : Callback<Void?> {
+            override fun onResponse(
+                call: Call<Void?>?,
+                response: Response<Void?>
+            ) {
+                if (response.code() == 200) {
+                    Toast.makeText(
+                        this@second,
+                        "Aadhar validation Complete", Toast.LENGTH_LONG
+                    ).show()
+                    val call1: Call<Body1?>? =
+                        retrofitInterface2?.getPhn(aadhar) //idhar doubt hai ki ye phone number return karega ki nhi
+                    call1!!.enqueue(object : Callback<Body1?> {
+                        override fun onResponse(
+                            call1: Call<Body1?>?,
+                            response1: Response<Body1?>
+                        ) {
+                            if (response1.code() == 200) {
+                                var bd: Body1 = response1.body()!!
+                                Toast.makeText(
+                                    this@second,
+                                    bd.phoneNumber, Toast.LENGTH_LONG
+                                ).show()
+                                val map1: HashMap<String, String?> = HashMap()
+                                map1["messengerId"] = "8192836451"
+                                map1["phoneNumber"] = bd.phoneNumber
+                                val call2: Call<Void?>? = retrofitInterface2?.getotp(map1)
+                                call2!!.enqueue(object : Callback<Void?> {
+                                    override fun onResponse(p0: Call<Void?>, p1: Response<Void?>) {
+                                        if (p1.code() == 200) {
+                                            Toast.makeText(
+                                                this@second,
+                                                "OTP Generated ", Toast.LENGTH_LONG
+                                            ).show()
+                                            val call3: Call<Void?>? =
+                                                retrofitInterface2?.matchotp(page_2_aadhar_otp.text.toString())
+                                            call3!!.enqueue(object : Callback<Void?> {
+                                                override fun onResponse(
+                                                    p00: Call<Void?>,
+                                                    p11: Response<Void?>
+                                                ) {
+                                                    if (p11.code() == 200) {
+                                                        Toast.makeText(
+                                                            this@second,
+                                                            "Aadhar Verified ", Toast.LENGTH_LONG
+                                                        ).show()
+                                                    } else {
+                                                        Toast.makeText(
+                                                            this@second,
+                                                            "Aadhar Not Verified ",
+                                                            Toast.LENGTH_LONG
+                                                        ).show()
+                                                    }
+                                                }
+
+                                                override fun onFailure(
+                                                    p00: Call<Void?>,
+                                                    t4: Throwable
+                                                ) {
+                                                    Toast.makeText(
+                                                        this@second, t4.message,
+                                                        Toast.LENGTH_LONG
+                                                    ).show()
+
+                                                }
+                                            })
+
+
+                                        }
+                                    }
+
+                                    override fun onFailure(p0: Call<Void?>, t3: Throwable) {
+                                        Toast.makeText(
+                                            this@second, t3.message,
+                                            Toast.LENGTH_LONG
+                                        ).show()
+
+                                    }
+                                })
+
+
+                            }
+                        }
+
+                        override fun onFailure(
+                            call1: Call<Body1?>?,
+                            t2: Throwable
+                        ) {
+                            Toast.makeText(
+                                this@second, t2.message,
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                        }
+                    })
+                }
+            }
+
+            override fun onFailure(
+                call: Call<Void?>?,
+                t1: Throwable
+            ) {
+                Toast.makeText(
+                    this@second, t1.message,
+                    Toast.LENGTH_LONG
+                ).show()
+
+            }
+        })
+
+
+    }
 
 }
