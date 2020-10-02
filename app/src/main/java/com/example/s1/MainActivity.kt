@@ -24,12 +24,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.page_1)
         setContentView(R.layout.page_1)
-
+// here we create retrofit builder
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
+// here we create retrofit interface object
         var retrofitInterface: RetrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
         page_1_login.setOnClickListener {
